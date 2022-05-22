@@ -1,0 +1,23 @@
+<%- include ('partials/_header'); -%>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/update/<%= data.codigo %>" method="post">
+                        <div class="form-group">
+                            <input type="text" name="codigo" value="<%=data.codigo%>" class="form-control" readonly>
+                            <input type="text" name="nombre" value="<%=data.nombre%>" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Editar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include ('partials/_footer'); -%>

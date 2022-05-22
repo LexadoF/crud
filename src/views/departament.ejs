@@ -1,0 +1,51 @@
+<%- include ('partials/_header'); -%>
+
+<!-- <pre> <%= data[0]%></pre> -->
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Codigo</th>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% if (data){%>
+                        <% for (var i=0; i < data.length; i++){ %>
+                            <tr>
+                                <td> <%= ( i +1 ) %> </td>
+                                <td> <%= ( data[i].codigo ) %> </td>
+                                <td> <%= ( data[i].nombre ) %> </td>
+                                <td>
+                                    <a href="/delete/<%= data[i].codigo%>" class="btn btn-danger">Eliminar</a>
+                                    <a href="/update/<%= data[i].codigo%>" class="btn btn-info">Actualizar</a>
+                                </td>
+                            </tr>
+                       <% } %>
+                        <% } %>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/add" method="post">
+                        <div class="form-group">
+                            <input type="text" name="nombre" required placeholder="Inserte Nombre" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            Guardar nuevo
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include ('partials/_footer'); -%>
