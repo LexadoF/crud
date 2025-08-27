@@ -1,13 +1,13 @@
 {
   "name": "crud",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "Simple crud",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Steve Fox",
   "license": "MIT",
   "dependencies": {
     "ejs": "^3.1.8",
